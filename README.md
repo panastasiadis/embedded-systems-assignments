@@ -10,15 +10,25 @@ This repository consists of three main projects that demonstrate different aspec
 2. **Arduino Project**: Client service system using Arduino with buttons and LED indicators
 3. **Verilog Project**: Hardware description language implementation of the client service system
 
-### Files
-- **`transform_image.ipynb`**: Jupyter notebook containing three scripts:
-  - Script 1: Converts RGB images to Bayer pattern format
-  - Script 2: Implements debayering algorithm in Python
-  - Script 3: Reconstructs images from processed RGB values
-- **`debayering_filter.c`**: C implementation with HLS pragmas for hardware synthesis
-- **`debayering_filter.h`**: Header file defining the filter interface
-- **`debayering_filter_test.c`**: Test program for the C implementation
-- **Sample Images**: `mountains.jpg` and `ravi.jpg` for testing
+## HLS Project - Debayering Filter for Image Processing
+
+### Description
+A High-Level Synthesis (HLS) project that implements a Debayering filter for image processing. The project demonstrates the conversion of a Bayer-patterned image to a full RGB image using both Python and C, with the C implementation optimized for hardware synthesis using HLS pragmas.
+
+### Workflow
+- **Step 1:** Use the Jupyter notebook (`transform_image.ipynb`) to:
+  - Convert an RGB image to a Bayer pattern and save it as a binary text file (`image_8bit.txt`).
+  - (Optional) Reconstruct the RGB image in Python for verification.
+- **Step 2:** The C implementation (`debayering_filter.c` and `debayering_filter.h`) reads the Bayer-patterned image, applies the Debayering algorithm, and reconstructs the RGB image. HLS pragmas are used to optimize the code for hardware synthesis.
+- **Step 3:** The test program (`debayering_filter_test.c`) automates reading the input, running the filter, and saving the output RGB values to `output.txt`.
+- **Step 4:** The notebook can also reconstruct and visualize the output image from the C implementation for comparison.
+
+### Features
+- Implements a 3x3 neighborhood Debayering algorithm
+- HLS pragmas for loop unrolling and pipelining to optimize for FPGA/ASIC synthesis
+- Python scripts for data preparation and verification
+- Supports 256x256 pixel images (configurable in code)
+- Sample images (`mountains.jpg`, `ravi.jpg`) provided for testing
 
 ## Arduino Project - Client Service System
 
