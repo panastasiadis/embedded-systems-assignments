@@ -1,4 +1,4 @@
-# Collection of Embedded Systems Assignments
+# Collection of Embedded Systems Projects
 
 This repository contains projects developed for the course "Προγραμματισμός Ενσωματωμένων Συστημάτων σε περιβάλλοντα Edge" (Embedded Systems Programming in Edge Environments).
 
